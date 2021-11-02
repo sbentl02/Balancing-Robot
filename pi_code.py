@@ -3,20 +3,16 @@ import time
 
 kit = ServoKit(channels=16)
 motor = 0
+STOP = -0.1
 
-kit.servo[motor].angle = 0
+kit.continuous_servo[motor].throttle = STOP
 time.sleep(1)
 
 def rotate_clockwise():
-    kit.servo[motor].angle = 10
-    time.sleep(0.01)
-    kit.servo[motor].angle = 20
-    time.sleep(0.01)    
-    kit.servo[motor].angle = 30
-    time.sleep(0.01)
-    kit.servo[motor].angle = 40
-    time.sleep(0.01)
-    kit.servo[motor].angle = 50
+    kit.continuous_servo[motor].throttle = 1
+    time.sleep(0.054)
+    kit.continuous_servo[motor].throttle = STOP
+
 
 rotate_clockwise()
 
