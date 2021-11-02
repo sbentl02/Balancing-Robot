@@ -4,9 +4,6 @@ import time
 kit = ServoKit(channels=16)
 motor = 0
 
-rotate_clockwise()
-
-
 
 
 def rotate_clockwise():
@@ -20,4 +17,5 @@ def rotate_clockwise():
     time.sleep(10)
     kit.servo[motor].angle(50)
     time.sleep(10)
-    
+
+rotate_clockwise()
